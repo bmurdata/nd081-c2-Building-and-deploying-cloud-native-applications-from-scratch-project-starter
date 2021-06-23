@@ -1,15 +1,15 @@
 import azure.functions as func
 import pymongo
-
+import dbsetup
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     request = req.get_json()
 
     if request:
         try:
-            url = "localhost"  # TODO: Update with appropriate MongoDB connection information
+            url = dbsetup.myurl
             client = pymongo.MongoClient(url)
-            database = client['azure']
+            database = client[dbsetup.db]
             collection = database['advertisements']
 
             rec_id1 = collection.insert_one(eval(request))
