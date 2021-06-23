@@ -1,0 +1,2 @@
+myurl="url"
+db="myDB"
