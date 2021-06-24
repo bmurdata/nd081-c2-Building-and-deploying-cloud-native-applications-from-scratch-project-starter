@@ -16,7 +16,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             database = client[dbsetup.db]
             collection = database['posts']
 
-            query = {'_id': ObjectId(id)}
+            query = {'_id': id} # ObjectId(id)}
             result = collection.find_one(query)
             result = dumps(result)
 

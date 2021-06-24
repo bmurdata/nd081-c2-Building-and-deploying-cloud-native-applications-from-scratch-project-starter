@@ -2,7 +2,7 @@ import azure.functions as func
 import pymongo
 import dbsetup
 def main(req: func.HttpRequest) -> func.HttpResponse:
-
+    print("Trying to get a json of the data or something")
     request = req.get_json()
 
     if request:
@@ -11,6 +11,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             client = pymongo.MongoClient(url)
             database = client[dbsetup.db]
             collection = database['advertisements']
+            print(request)
 
             rec_id1 = collection.insert_one(eval(request))
 

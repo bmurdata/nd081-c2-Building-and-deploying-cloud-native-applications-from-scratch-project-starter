@@ -1,9 +1,9 @@
 import azure.functions as func
 import pymongo
 import json 
-url = "url"
+url = "mongodb://neighborbm:5rgMDHvu7SCScgZvgFVQyxkSdavoFw09OGBb1E5FHSEvE0Xtt1rMEdh9epPslKQ8G1oEBZVl6vszyT1OC1uzOQ==@neighborbm.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@neighborbm@"  # TODO: Update with appropriate MongoDB connection information
 client = pymongo.MongoClient(url)
-database = client['db']
+database = client['bneighborly']
 collection = database['advertisements']
 
 collec2=database['posts']
